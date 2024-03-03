@@ -1,0 +1,141 @@
+package Voter;
+import java.util.Scanner;
+public class UserLogin extends Voting
+{
+	static String arr[]= {"KSR","NKK","KHB","KBB"};
+	static int arr1[]= {101,102,103,104};
+	static Scanner sc=new Scanner(System.in);
+	
+	public static void login()
+	{
+		System.out.print("\n\t\tAre You Election Committee Member (YES/NO)?:- ");
+		String s=sc.next().strip().toUpperCase();
+		int x=1;
+		int a=1;
+		if(s.equals("YES"))
+		{
+			while(x<=1)
+			{
+				System.out.print("\n\t\tEnter Your UserName: ");
+				String uname=sc.next().strip().toUpperCase();
+				System.out.print("\n\t\tEnter Your Password: ");
+				int i=sc.nextInt();
+	
+				if(uname.equals(arr[0]))
+				{
+					if(i==arr1[0])
+					{
+						System.out.println("\n\t｡☆✼★━ Welcome to My Voting Portal ━★✼☆｡");
+						System.out.println("\t----------------------------------------");
+						System.out.println("\n\tWelcome to Mr."+arr[0]+"  Login Successful.............!");
+						System.out.print("\n\tEnter the Total Number of Voters: ");
+						vote(sc.nextInt());
+					}
+				}
+				else if(uname.equals(arr[1]))
+				{
+					if(i==arr1[1])
+					{
+						System.out.println("\n\t｡☆✼★━ Welcome to My Voting Portal ━★✼☆｡");
+						System.out.println("\t----------------------------------------");
+						System.out.println("\n\tWelcome to Mr."+arr[1]+"  Login Successful.............!");
+						System.out.print("\n\tEnter the Total Number of Voters: ");
+						vote(sc.nextInt());
+					}
+				}
+				else if(uname.equals(arr[2]))
+				{
+					if(i==arr1[2])
+					{
+						System.out.println("\n\t｡☆✼★━ Welcome to My Voting Portal ━★✼☆｡");
+						System.out.println("\t----------------------------------------");
+						System.out.println("\n\tWelcome to Mr."+arr[2]+"  Login Successful.............!");
+						System.out.print("\n\tEnter the Total Number of Voters: ");
+						vote(sc.nextInt());
+					}
+				}
+				else if(uname.equals(arr[3]))
+				{
+					if(i==arr1[3])
+					{
+						System.out.println("\n\t｡☆✼★━ Welcome to My Voting Portal ━★✼☆｡");
+						System.out.println("\t----------------------------------------");
+						System.out.println("\n\tWelcome to Mr."+arr[3]+"  Login Successful.............!");
+						System.out.print("\n\tEnter the Total Number of Voters: ");
+						vote(sc.nextInt());
+					}
+				}
+				else
+				{
+					if(a<=3)
+					{
+						System.err.println("\nInvalid Username or Password");
+						System.err.println(a+" Chance complited and You have "+(3-a)+" Chances only\n");
+						a++;
+						x--;
+						if(a==4)
+						{
+							System.out.println("Contact your Admin as soon as posible");
+							break;
+						}
+					}
+				}
+				
+				x++;
+			}
+			
+		}
+		else
+		{
+			System.out.println("\n\t------------- ✶⊶⊷❍ Welcome to My Portal ❍⊶⊷✶---------------");
+			System.out.print("\n\tEnter Your Name :- ");
+			sc.nextLine();
+			String name=sc.nextLine();
+			System.out.println("\n\t\tHello "+name+", Have a Nice Day..........!");
+			System.out.print("\n\tYou Want to Check Your Eligibility for Voting...!(YES/NO): ");
+			String s1=sc.next().strip().toUpperCase();
+			if(s1.equals("YES"))
+			{
+				
+				System.out.print("\n\t\tDo You Know Your Age(YES/NO): ");
+				String s2=sc.next().strip().toUpperCase();
+				if(s2.equals("NO"))
+				{
+					System.out.print("\n\tEnter the Current Year: ");
+					int y1=sc.nextInt();
+					System.out.print("\n\t"+name+" Enter Your Date of Birth Year: ");
+					int y2=sc.nextInt();
+					int y3=y1-y2;
+					System.out.println("\n\t"+name+" Your Current Age is: "+y3+" Years\n");
+					if(y3>=18)
+						System.out.println("\t"+name+" You are Eligible For Voting");
+					else
+					{
+						System.err.println("\t"+name+" You are Eligible for After "+(18-y3)+" Years...!");
+					}
+				}
+				else
+				{
+					System.out.print("\n\tEnter Your Age: ");
+					int age=sc.nextInt();
+					if(age>=18)
+						System.out.println("\n\t"+name+" You are Eligible For Voting");
+					else
+					{
+						System.err.println("\n\t"+name+" You are Eligible for After "+(18-age)+" Years...!");
+					}
+				}
+			}
+			
+			System.out.println("\n\tThank You For Visiting Mr."+name);
+		}
+	}
+		
+	public static void main(String[] args) 
+	{
+		System.out.println("\n\t\t\t ✦ ✧ ✧ Welcome My Java Program ✧ ✧ ✦ ");
+		System.out.println("\t\t\t---------------------------------------");
+		login();
+	}
+
+}
