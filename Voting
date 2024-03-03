@@ -1,0 +1,143 @@
+package Voter;
+import java.util.Scanner;
+public class Voting 
+{
+	static int p=0;
+	static int q=0;
+	static int r=0;
+	static int s=0;
+	static int t=0;
+	static Scanner sc=new Scanner(System.in);
+	static String time="5:30";
+	public static void vote(int total_Voters)
+	{
+		System.out.println("\n\tAvailable Parties is TDP, YCP, BJP, BRS and JANASENA");
+		int b=1;
+		if(!(time.equals("1:30")))
+		{
+			while(total_Voters>=b)
+			{
+				System.out.print("\n\t\tEnter Your Party Name for Vote: ");
+				String name=sc.next();
+				String s1=name.strip().toUpperCase();
+				switch(s1)
+				{
+					case "TDP":
+						p++;
+						break;
+					case "YCP":
+						q++;
+						break;
+					case "BJP":
+						r++;
+						break;
+					case "BRS":
+						s++;
+						break;
+					case "JANASENA":
+						t++;
+						break;
+					default:
+						System.err.println("\nPlease Enter Valid Party Name-----------! ");
+						total_Voters++;
+						break;
+				}
+				b++; 
+			}	
+		}
+		else
+		{
+			System.out.println("\nTotal Pending Votes is : "+(total_Voters-(p+q+r+s+t)));
+		}
+		
+		System.out.println("\n\tTDP party got a "+p+" Votes");
+		System.out.println("\tYCP party got a "+q+" Votes");
+		System.out.println("\tBJP party got a "+r+" Votes");
+		System.out.println("\tTRS party got a "+s+" Votes");
+		System.out.println("\tJANASENA party got a "+t+" Votes\n");
+		
+		if(p>=q && p>=r && p>=s && p>=t)
+        {
+			if(p==q && p==r && p==s && p==t)
+			{
+                System.err.println("All Parties are Equal");
+			}
+            else if(p==r && p==s && p==t)
+                System.err.println("TDP,BJP,BRS,JANASENA Parties are Equal Votes");
+            else if(p==q && p==s && p==t)
+                System.err.println("TDP,YCP,BRS,JANASENA Parties are Equal Votes ");
+            else if(p==q && p==r && p==s)
+                System.err.println("TDP,YCP,BJP,BRS Parties are Equal Votes ");
+            else if(p==s && p==t)
+                System.err.println("TDP,BRS,JANASENA Parties are Equal Votes ");
+            else if(p==q && p==r)
+                System.err.println("TDP,YCP,BJP Parties are Equal Votes ");
+            else if(p==q && p==s)
+                System.err.println("TDP,YCP,BRS Parties are Equal Votes ");
+            else if(p==r && p==s)
+                System.err.println("TDP,BJP,BRS Parties are Equal Votes ");
+            else if(p==r && p==t)
+                System.err.println("TDP,BJP,JANASENA Parties are Equal Votes ");
+            else if(p==q)
+                System.err.println("TDP,YCP Parties are Equal Votes ");
+            else if(p==r)
+                System.err.println("TDP,BJP Parties are Equal Votes ");
+            else if(p==s)
+                System.err.println("TDP,BRS Parties are Equal Votes ");
+            else if(p==t)
+                System.err.println("TDP,JANASENA Parties are Equal Votes ");  
+            else
+                System.out.println("TDP Party got a Highest votes");
+            
+        }
+   
+		else if(q>=r && q>=s && q>=t)
+        {
+            if(q==r && q==s && q==t)
+                System.err.println("YCP,BJP,BRS,JANASENA Parties are Equal Votes ");
+            else if(q==r && q==s)
+                System.err.println("YCP,BJP,BRS Parties are Equal Votes ");
+            else if(q==r && q==t)
+                System.err.println("YCP,BJP,JANASENA Parties are Equal Votes ");
+            else if(q==s && q==t)
+                System.err.println("YCP,BRS,JANASENA Parties are Equal Votes ");
+            else if(q==r)
+                System.err.println("YCP,BJP Parties are Equal Votes ");
+            else if(q==s)
+                System.err.println("YCP,BRS Parties are Equal Votes ");
+            else if(q==t)
+                System.err.println("YCP,JANASENA Parties are Equal Votes ");
+            else
+                System.out.println("YCP Party got a Highest votes ");
+        }
+        else if(r>=s && r>=t)
+        {
+            if(r==s && r==t)
+                System.err.println("BJP,BRS,JANASENA Parties are Equal Votes ");
+            else if(r==s)
+                System.err.println("BJP,BRS Parties are Equal Votes ");
+            else if(r==t)
+                System.err.println("BJP,JANASENA Parties are Equal Votes ");
+            else
+                System.out.println("BJP Party got a Highest votes ");
+        }
+        else if(s>=t)
+        {
+            if(s==t)
+                System.err.println("BRS,JANASENA Parties are Equal Votes ");
+            else
+                System.out.println("BRS Party got a Highest votes ");
+        }
+        else
+        {
+            System.out.println("JANASENA Party got a Highest votes ");
+        }	
+	}
+	/*
+	 * public static void main(String[] args) {
+	 * System.out.println("\n\tWelcome to My Voting Portal\n");
+	 * System.out.print("\n\tEnter the Total Number of Voters: ");
+	 * vote(sc.nextInt());
+	 * System.out.println("\n\tThank You For Voting.......................!"); }
+	 */
+}
